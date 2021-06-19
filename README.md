@@ -74,7 +74,7 @@ If you want more information about our **recommendation algorithm**, please see 
 > Top 10 movies welcome you!  
 > For more service, click other tabs: `#Movie`, `#User`, `#Feeling Lucky`  
 >
-> <img src="./pic/welcomePage.png">
+> <table><tr><th><img src="./pic/welcomePage.png"></th></tr></table>
 
 <br>
 
@@ -103,9 +103,7 @@ If you want more information about our **recommendation algorithm**, please see 
 > Are you struggling with selecting movie?  
 > **Feeling Lucky** is the answer!  
 > 
-> <img src="./pic/feelingLucky.png">
-> :---:
-> Page Overview
+> <table><tr><th><img src="./pic/feelingLucky.png"></th></tr></table>
 
 <br>
 
