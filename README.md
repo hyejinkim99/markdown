@@ -2,7 +2,7 @@
 
 ## Introduction
 
-<p align="center"><img src="./pic/logo.png"></p>
+<img src="./pic/logo.png" height="300px">
 
 > ### ***Find Very Impressive Movies***
 
