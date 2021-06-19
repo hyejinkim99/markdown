@@ -208,7 +208,8 @@ curl -X GET "http://localhost:8080/users/recommendations?gender=m&age=24&occupat
     "genres" : "Action|Adventure",
     "imdb" : "(http://www.imdb.com/title/tt0056443)",
     "poster_url" : "https://m.media-amazon.com/images/M/MV5BZmY3MDlmODctYTY3Yi00NzYyLWIxNTUtYjVlZWZjMmMwZTBkXkEyXkFqcGdeQXVyMzAxNjg3MjQ@..jpg"
-}, {
+},
+{
     "title" : "Man Who Would Be King, The (1975)",
     "genres" : "Adventure",
     "imdb" : "(http://www.imdb.com/title/tt0073341)",
@@ -393,8 +394,9 @@ curl -X GET http://localhost:8080/movies/title
 ### Abstract
 The criteria for recommending movies in `VIM PROJECTOR` are `rating` and `count`.  
 
-- `rating` is the average score of a movie that belongs to `genres` you input (`target genres`) and is rated by users belonging to your categories of `gender`, `age`, and `occupation` (`target users`).  
-- `count` is the number of ratings of a movie that belongs to the target genres and rated by the target users.  
+> `rating` is the average score of a movie that belongs to `genres` you input (`target genres`) and is rated by users belonging to your categories of `gender`, `age`, and `occupation` (`target users`).  
+
+> `count` is the number of ratings of a movie that belongs to the target genres and rated by the target users.  
 
 In our algorithms, movies with **high rating averages** will be selected as recommendations. In each step in the algorithms, rating data of the movies that fit the conditions (`target movies`) will be processed and sorted. Top N movies in the sorted list will be selected to be recommended, with N being the number of movies required.  
 
@@ -404,59 +406,61 @@ For a movie to be recommended, the `rating average` of a movie must be **equal o
 
 ### Details
 
-`VIM PROJECTOR` uses two different movie recommendation algorithms depending on different inputs, `user information` and `movie information`.  
+`VIM PROJECTOR` uses two different movie recommendation algorithms depending on different inputs, **user information** and **movie information**.  
 
-1. Input `user information`  
+1. **Recommendation by user information**  
 
-    By `user information`, we mean your `gender`, `age`, `occupation` and `genres` you wish to watch.
-    When given `user information`, `VIM PROJECTOR` will recommend movies that are in the `target genres` and have high ratings by `target users`.  
-    The steps in this algorithm are shown below.  
-
-    1.  Generate a list of 10 recommended movies that are in the `target genres` and are rated highly by `target users`. If `target genres` are not given, the algorithm will search for and recommend movies in all genres.  
-    2.  If the number of movies in the generated list is less than 10, then expand the range of `target users` by expanding the range of `occupation` to **all occupations** and search again. Then add the recommended movies to the list.      
-    3.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` again by expanding the range of `age` to **all age groups** and search again. Then add the recommended movies to the list.  
-    4.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` once more by expanding the range of `gender` to **all genders** and search again. Then add the recommended movies to the list.
-    <br>
+    > By **user information**, we mean your `gender`, `age`, `occupation` and `genres` you wish to watch.
+    > When given **user information**, `VIM PROJECTOR` will recommend movies that are in the **target genres** and have high ratings by **target users**.  
+    > The steps in this algorithm are shown below.  
+    >
+    > 1.  Generate a list of 10 recommended movies that are in the `target genres` and are rated highly by `target users`. If `target genres` are not given, the algorithm will search for and recommend movies in all genres.  
+    > 2.  If the number of movies in the generated list is less than 10, then expand the range of `target users` by expanding the range of `occupation` to **all occupations** and search again. Then add the recommended movies to the list.      
+    > 3.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` again by expanding the range of `age` to **all age groups** and search again. Then add the recommended movies to the list.  
+    > 4.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` once more by expanding the range of `gender` to **all genders** and search again. Then add the recommended movies to the list.
+    
     <details>
-    <summary>See an example</summary>
+    <summary>Show an example</summary>
     <div markdown="1">
-
-    Let’s see an example of {`gender`: “m”, `age`: “56”, `occupation`: “k-12student”, `genres`: “” } given as an input of `user information`. Since the genres field is not given, movies in all genres will be the candidates for recommendation.
-
-    According to this algorithm, the generation of a movie recommendation list would follow the process shown below.
-
-    1.  A list of recommended movies is generated using the given `target user` data and `target genres` data. In this example, there is only one `target user`. The number of movies contained in this list of recommended movies is less than 10.
-    2.  Since there are less than 10 movies in the list, expand the range of `target users` by allowing the search for **all occupations**. Now the conditions for the `target users` would be {`gender`: “m”, `age`: “56”, `occupation`: “”, `genres`: “” }. Add the recommended movies based on the new range of `target users`.
-    3.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` by allowing the search for **all age groups**. Now the conditions for the `target users` would be {`gender`: “m”, `age`: “”, `occupation`: “”, `genres`: “” }. Add the recommended movies based on the new range of `target users`.
-    4.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` by allowing the search for **all genders**. Now the conditions for the `target users` would be {`gender`: “”, `age`: “”, `occupation`: “”, `genres`: “” }. Add the recommended movies based on the new range of `target users`.
-
+    <br>
+        
+    > Let’s see an example of {`gender`: "m", `age`: "56", `occupation`: "k-12student", `genres`: "" } given as an input of **user information**. Since the genres field is not given, movies in all genres will be the candidates for recommendation.
+    >
+    > According to this algorithm, the generation of a movie recommendation list would follow the process shown below.
+    >
+    > 1.  A list of recommended movies is generated using the given `target user` data and `target genres` data. In this example, there is only one `target user`. The number of movies contained in this list of recommended movies is less than 10.
+    > 2.  Since there are less than 10 movies in the list, expand the range of `target users` by allowing the search for **all occupations**. Now the conditions for the `target users` would be {`gender`: "m", `age`: "56", `occupation`: "", `genres`: "" }. Add the recommended movies based on the new range of `target users`.
+    > 3.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` by allowing the search for **all age groups**. Now the conditions for the `target users` would be {`gender`: "m", `age`: "", `occupation`: "", `genres`: "" }. Add the recommended movies based on the new range of `target users`.
+    > 4.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` by allowing the search for **all genders**. Now the conditions for the `target users` would be {`gender`: "", `age`: "", `occupation`: "", `genres`: "" }. Add the recommended movies based on the new range of `target users`.
     </div>
     </details>
     
 <br>
+    
 
-2. Input `movie information`  
+2. **Recommendation by movie information**  
 
-    By `movie information`, we mean a `movie title` and a `limit number`. When given `movie information`, `VIM PROJECTOR` will recommend high-rated movies similar to the given movie and up to the given `limit number`. The similarity of the movies are assessed by the `genres` of the movies.
-    The steps in this algorithm are shown below.
-
-    1.  Generate a list of recommended movies that are in the **same genres** as the given movie.
-    2.  If the number of movies in the generated list is less than the given `limit number`, add the recommended movies that belong to genres that **include all the genres** of the given movie to the list.
-    3.  If the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **at least one genre** of the given movie.
-    4.  If the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **all genres**.
-    <br>
+    > By **movie information**, we mean a `movie title` and a `limit number`. When given **movie information**, `VIM PROJECTOR` will recommend high-rated movies similar to the given movie and up to the given `limit number`. The similarity of the movies are assessed by the `genres` of the movies.
+    > The steps in this algorithm are shown below.
+    > 
+    > 1.  Generate a list of recommended movies that are in the **same genres** as the given movie.
+    > 2.  If the number of movies in the generated list is less than the given `limit number`, add the recommended movies that belong to genres that **include all the genres** of the given movie to the list.
+    > 3.  If the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **at least one genre** of the given movie.
+    > 4.  If the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **all genres**.
+    
     <details>
-    <summary>See an example</summary>
+    <summary>Show an example</summary>
     <div markdown="1">
-
-    Let’s see an example of {`title`: “Toy Story (1995)”, `limit`: 20} given as an input of `movie information`. The `genres` of this movie are `Animation`, `Children's`, and `Comedy`. A list of 20 recommended movies should be generated.
-
-    According to this algorithm, the generation of a movie recommendation list would follow the process shown below.
-
-    1.  A list of recommended movies is generated from the data of movies that only belong to all three `genres` of `Animation`, `Children's`, and `Comedy` at once. The generated list contains only one movie.
-    2.  Then recommendations are searched within the data of movies that belong to all three `genres` and more. One such example would be a movie that belongs to `genres` of `Animation`, `Children’s`, `Comedy` and `Action`. However, in this case there are no movies added to the list.
-    3.  Now the recommendations are searched from the data of movies that belong to at least one `genre` of the given three `genres`. This means that the recommended movies could belong to any one `genre` from `Animation`, `Children’s`, or `Comedy`, or to any two of these `genres`. In this example, there are 19 movies added to the generated list.
-    4.  In this example, the list of 20 recommended movies is now generated. However, if the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **all genres**.
+    <br>
+        
+    > Let’s see an example of {`title`: "Toy Story (1995)", `limit`: 20} given as an input of `movie information`. The `genres` of this movie are `Animation`, `Children's`, and `Comedy`. A list of 20 recommended movies should be generated.
+    > 
+    > According to this algorithm, the generation of a movie recommendation list would follow the process shown below.
+    > 
+    > 1.  A list of recommended movies is generated from the data of movies that only belong to all three `genres` of `Animation`, `Children's`, and `Comedy` at once. The generated list contains only one movie.
+    > 2.  Then recommendations are searched within the data of movies that belong to all three `genres` and more. One such example would be a movie that belongs to `genres` of `Animation`, `Children’s`, `Comedy` and `Action`. However, in this case there are no movies added to the list.
+    > 3.  Now the recommendations are searched from the data of movies that belong to at least one `genre` of the given three `genres`. This means that the recommended movies could belong to any one `genre` from `Animation`, `Children’s`, or `Comedy`, or to any two of these `genres`. In this example, there are 19 movies added to the generated list.
+    > 4.  In this example, the list of 20 recommended movies is now generated. However, if the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **all genres**.
 
     </div>
     </details>
