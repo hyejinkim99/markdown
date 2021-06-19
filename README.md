@@ -14,35 +14,41 @@
 
 ## Introduction
 
+Welcome to `VIM PROJECTOR`!  
 `VIM PROJECTOR` is a **movie recommendation service** which recommends **Very Impressive Movies** according to given conditions.  
-Here are three functions of `VIM PROJECTOR`.  
+
+### Function  
 
 1. **Recommendation by User Information😊**  
     > Give the `genres` you wish to watch and your `gender`, `age` and `occupation`.  
     > Then you will receive a list of  **10 recommended movies** that belong to the given genres.  
-    > To see the list of available input, refer to [here](#Input-User-Information).  
 
-2. **Recommendation by Movie Title🎞️**  
+2. **Recommendation by Movie Information🎞️**  
     > Give a `movie title` and the `number of movies` you wish to be recommended.  
     > Then you will get the given number of movies similar to the one you gave us.  
-    > To see more detail of inputs, refer to [here](#Input-Movie-Information).  
    
 3. **Feeling Lucky🍀**    
     > Sometimes, recommendations in a similar way can be boring for you.  
     > Just click `feeling lucky`, then you will get the randomly recommended movie.  
     > Find the unpopular but unexpectedly impressive movie!  
 
-<br>
+### Interface  
 
-We provide **web service** and **RESTful API** for `VIM PROJECTOR`.  
-To see the guide for web page, refer to [here](#Introduction).  
-**here 위치 web page guide로 바꿔야 함**
+1. **Web Service**
+    > The website of `VIM PROJECTOR`.  
+    > Simple and user-friendly. Easy to search.  
+    > To see more details of web service, refer to [Web Service Guide](**********************************************************).  
 
-Using `VIM PROJECTOR` will give you a list of recommended movies with information such as titles, genres, and links to imdb.
-Also, it will give you random movie    
+2. **REST API**
+    > The command line interface of `VIM PROJECTOR`.  
+    > Free to search. Make new applications.  
+    > To see more details of REST API, refer to [REST API Guide](********************).  
+
+Using `VIM PROJECTOR` will give you a list of recommended movies with information such as `titles`, `genres`, and `links to imdb`.  
+Also, it will give you random movie.  
 Find your next movie to watch with `VIM PROJECTOR`!!!  
 
-If you want more information about our **recommendation algorithm**, please see [here](#Recommendation-Algorithm).  
+If you want more information about our **recommendation algorithm**, please see [Recommendation Algorithm](***************).  
 
 <br>
 <br>
@@ -220,7 +226,7 @@ curl -X GET "http://localhost:8080/users/recommendations?gender=m&age=24&occupat
 
 <br>
 
-### Recommendation by Movie Title  
+### Recommendation by Movie Information  
 
 **API Basic Information**
 |Method|Request URL|Content Type|Output Format|
