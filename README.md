@@ -65,13 +65,22 @@ If you want more information about our **recommendation algorithm**, please see 
 
 ## Webpage Guide
 
-### Homepage
-<img src="./pic/homepage.png">
-### Recommended by User
+<img src="./pic/welcomePage.png">
 
-### Recommended by Movie
+> ### ***Provide the Best User Experience***
 
-### Feeling Lucky
+<br>
+
+### Home👋
+
+### User😊
+
+|:----:|:----:|
+| <img src="./pic/wideLogo.png"> | <img src="./pic/wideLogo.png"> |
+
+### Movie🎞️
+
+### Feeling Lucky🍀
 - 구현 후 작성
 
 
