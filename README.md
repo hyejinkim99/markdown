@@ -84,9 +84,7 @@ If you want more information about our **recommendation algorithm**, please see 
 > Then, click the title  
 > `VIM PROJECTOR` recommends you highly rated movies based on given movie title.  
 > 
-> <img src="./pic/searchByMoviePage.png"> | <img src="./pic/searchByMovieTitle.gif">
-> :---:|:---:
-> Page Overview | Type Movie Title (Auto-complete supported)
+> <table><tr><th width="60%"><img src="./pic/searchByMoviePage.png"></th><th><img src="./pic/searchByMovieTitle.gif"></th></tr></table>
 
 <br>
 
@@ -95,10 +93,8 @@ If you want more information about our **recommendation algorithm**, please see 
 > Select **hashtag**  
 > Then, click the search button  
 > `VIM PROJECTOR` recommends you top 10 movies based on given user information.  
->
-> <img src="./pic/searchByUserInfo.png"> | <img src="./pic/searchByUserInfo.gif"> 
-> :---:|:---:
-> Page Overview | Select Hashtag
+> 
+> <table><tr><th width="60%"><img src="./pic/searchByUserPage.png"></th><th><img src="./pic/searchByUserInfo.gif"></th></tr></table>
 
 <br>
 
@@ -117,10 +113,8 @@ If you want more information about our **recommendation algorithm**, please see 
 
 > For more information on recommended movie, **just click the poster!**  
 > It will take you `imdb` site  
->
-> <img src="./pic/scroll.gif"> | <img src="./pic/interactive.gif">
-> :---:|:---:
-> Scroll | Resize
+> 
+> <table><tr><th width="50%"><img src="./pic/scroll.gif"></th><th><img src="./pic/interactive.gif"></th></tr></table>
 
 
 
