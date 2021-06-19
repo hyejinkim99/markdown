@@ -1,29 +1,34 @@
 # VIM PROJECTOR (CSE364_Group10)
 
+<img src="./pic/wideLogo.png">
+
+> ### ***Find Very Impressive Movies, VIM PROJECTOR***
+
+<br>
+
 ## Introduction
 
-<img src="./pic/logo.png" height="300px">
+`VIM PROJECTOR` is a **movie recommendation service** which recommends **Very Impressive Movies** according to given conditions.  
+Here are three functions of `VIM PROJECTOR`.  
 
-> ### ***Find Very Impressive Movies***
+1. **Recommendation by User Information😊**  
+    > Give the `genres` you wish to watch and your `gender`, `age` and `occupation`.  
+    > Then you will receive a list of  **10 recommended movies** that belong to the given genres.  
+    > To see the list of available input, refer to [here](#Input-User-Information).  
 
-`VIM PROJECTOR` is a **movie recommendation RESTful API** which recommends **Very Impressive Movies** according to given conditions.  
-There are two ways you can get movie recommendations using `VIM PROJECTOR`.  
-
-1.  Input `user information`  
-Give the `genres` you wish to watch and your `gender`, `age` and `occupation`. Then you will receive a list of **10 recommended movies** that belong to the given genres.<br>
-    To see the list of available input, refer to [here](#Input-User-Information).
-    
-
-2. Input `movie information`  
-Give a `movie title` and the `number of movies` you wish to be recommended. Then you will get the given number of movies similar to the one you gave us.<br>
-   To see more detail of inputs, refer to [here](#Input-Movie-Information).
+2. **Recommendation by Movie Title🎞️**  
+    > Give a `movie title` and the `number of movies` you wish to be recommended.  
+    > Then you will get the given number of movies similar to the one you gave us.  
+    > To see more detail of inputs, refer to [here](#Input-Movie-Information).  
    
+3. **Feeling Lucky🍀**    
+    > Sometimes, recommendations in a similar way can be boring for you.  
+    > Just click `feeling lucky`, then you will get the randomly recommended movie.  
+    > Find the unpopular but unexpectedly impressive movie!  
 
-3. Feeling lucky    
-Sometimes, recommendations in a similar way can be boring for you. Just click `feeling lucky`, then you will get the randomly recommended movie.     
-   Find the unpopular but unexpectedly impressive movie!
+<br>
 
-We provide `web service` for `VIM PROJECTOR`. To see the guide for web page, refer to [here](#Introduction).
+We provide `web service` and `RESTful API` for `VIM PROJECTOR`. To see the guide for web page, refer to [here](#Introduction).
 **here 위치 web page guide로 바꿔야 함**
 
 Using `VIM PROJECTOR` will give you a list of recommended movies with information such as titles, genres, and links to imdb.
@@ -47,12 +52,30 @@ If you want more information about our **recommendation algorithm**, please see 
     + [Input User Information](#Input-User-Information)
     + [Input Movie Information](#Input-Movie-Information)
 + [Recommendation Algorithm](#Recommendation-Algorithm)
-    + [Abstraction](#Abstraction)
+    + [Abstract](#Abstract)
     + [Details](#Details)
 + [Contributors](#Contributors)
 
 <br>
 <br>
+
+
+
+## Webpage Guide
+
+### Homepage
+ - 스크린샷 첨부
+### Recommended by User
+
+### Recommended by Movie
+
+### Feeling Lucky
+- 구현 후 작성
+
+
+
+
+
 
 
 ## Installation
@@ -71,19 +94,6 @@ Please refer to the following sections about details in [calling this API](#API-
 <br>
 <br>
 <br>
-
-## Website Guide
-
-### Homepage
- - 스크린샷 첨부
-### Recommended by User
-
-### Recommended by Movie
-
-### Feeling Lucky
-- 구현 후 작성
-
-
 
 
 ## Using the REST API
@@ -366,7 +376,7 @@ curl -X GET http://localhost:8080/movies/title
 
 ## Recommendation Algorithm
 
-### Abstraction
+### Abstract
 The criteria for recommending movies in `VIM PROJECTOR` are `rating` and `count`.  
 
 - `rating` is the average score of a movie that belongs to `genres` you input (`target genres`) and is rated by users belonging to your categories of `gender`, `age`, and `occupation` (`target users`).  
