@@ -28,11 +28,12 @@ Here are three functions of `VIM PROJECTOR`.
 
 <br>
 
-We provide `web service` and `RESTful API` for `VIM PROJECTOR`. To see the guide for web page, refer to [here](#Introduction).
+We provide **web service** and **RESTful API** for `VIM PROJECTOR`.  
+To see the guide for web page, refer to [here](#Introduction).  
 **here 위치 web page guide로 바꿔야 함**
 
 Using `VIM PROJECTOR` will give you a list of recommended movies with information such as titles, genres, and links to imdb.
- Also, it will give you random movie    
+Also, it will give you random movie    
 Find your next movie to watch with `VIM PROJECTOR`!!!  
 
 If you want more information about our **recommendation algorithm**, please see [here](#Recommendation-Algorithm).  
@@ -47,6 +48,7 @@ If you want more information about our **recommendation algorithm**, please see 
 + [Introduction](#Introduction)
 + [Index](#Index)
 + [Installation](#Installation)
++ [Webpage Guide](#Webpage-Guide)
 + [API Guide](#API-Guide)
     + [Common](#Common)
     + [Input User Information](#Input-User-Information)
@@ -64,7 +66,7 @@ If you want more information about our **recommendation algorithm**, please see 
 ## Webpage Guide
 
 ### Homepage
- - 스크린샷 첨부
+<img src="./pic/homepage.png">
 ### Recommended by User
 
 ### Recommended by Movie
