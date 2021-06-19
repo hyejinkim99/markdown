@@ -15,41 +15,71 @@
 ## Introduction
 
 Welcome to `VIM PROJECTOR`!  
-`VIM PROJECTOR` is a **movie recommendation service** which recommends **Very Impressive Movies** according to given conditions.  
+`VIM PROJECTOR` is a **movie recommendation service** which recommends **Very Impressive Movies** according to given conditions.
 
-### Function  
+### Function
 
-1. **Recommendation by User Information😊**  
-    > Give the `genres` you wish to watch and your `gender`, `age` and `occupation`.  
-    > Then you will receive a list of  **10 recommended movies** that belong to the given genres.  
+1. **Recommendation by User Information😊**
+   > Give the `genres` you wish to watch and your `gender`, `age` and `occupation`.  
+   > Then you will receive a list of  **10 recommended movies** that belong to the given genres.
 
-2. **Recommendation by Movie Information🎞️**  
-    > Give a `movie title` and the `number of movies` you wish to be recommended.  
-    > Then you will get the given number of movies similar to the one you gave us.  
-   
-3. **Feeling Lucky🍀**    
-    > Sometimes, recommendations in a similar way can be boring for you.  
-    > Just click `feeling lucky`, then you will get the randomly recommended movie.  
-    > Find the unpopular but unexpectedly impressive movie!  
+2. **Recommendation by Movie Information🎞️**
+   > Give a `movie title` and the `number of movies` you wish to be recommended.  
+   > Then you will get the given number of movies similar to the one you gave us.
 
-### Interface  
+3. **Feeling Lucky🍀**
+   > Sometimes, recommendations in a similar way can be boring for you.  
+   > Just click `feeling lucky`, then you will get the randomly recommended movie.  
+   > Find the unpopular but unexpectedly impressive movie!
+
+### Interface
 
 1. **Web Service**
-    > The website of `VIM PROJECTOR`.  
-    > Simple and user-friendly. Easy to search.  
-    > To see more details of web service, refer to [Web Service Guide](**********************************************************).  
+   > The website of `VIM PROJECTOR`.  
+   > Simple and user-friendly. Easy to search.  
+   > To see more details of web service, refer to [Web Service Guide](#Web Service).
 
 2. **REST API**
-    > The command line interface of `VIM PROJECTOR`.  
-    > Free to search. Make new applications.  
-    > To see more details of REST API, refer to [REST API Guide](********************).  
+   > The command line interface of `VIM PROJECTOR`.  
+   > Free to search. Make new applications.  
+   > To see more details of REST API, refer to [REST API Guide](#REST API).
 
 Using `VIM PROJECTOR` will give you a list of recommended movies with information such as `titles`, `genres`, and `links to imdb`.  
 Also, it will give you random movie.  
-Find your next movie to watch with `VIM PROJECTOR`!!!  
+Find your next movie to watch with `VIM PROJECTOR`!!!
 
-If you want more information about our **recommendation algorithm**, please see [Recommendation Algorithm](***************).  
-Then, let's move on to quick start!  
+If you want more information about our **recommendation algorithm**, please see [Recommendation Algorithm](#Recommendation Algorithm).  
+Then, let's move on to quick start!
+
+<br>
+<br>
+<br>
+
+
+
+
+
+## Index
+
++ [Introduction](#introduction)
++ [Index](#index)
++ [Quick Start](#quick-start)
++ [Web Service](#web-service)
+    + [Home](#home)
+    + [Movie](#movie%EF%B8%8F)
+    + [User](#user)
+    + [Feeling Lucky](#feeling-lucky)
+    + [Recommendation Page](#recommendation-page)
++ [REST API](#rest-api)
+    + [Recommendation by User Information](#recommendation-by-user-information)
+    + [Recommendation by Movie Information](#recommendation-by-movie-information)
+    + [Feeling Lucky](#feeling-lucky-1)
+    + [Get All Movie Information](#get-all-movie-information)
+    + [Get Movie Title List](#get-movie-title-list)
++ [Recommendation Algorithm](#recommendation-algorithm)
+    + [Abstract](#abstract)
+    + [Details](#details)
++ [Contributors](#contributors)
 
 <br>
 <br>
@@ -62,7 +92,7 @@ Then, let's move on to quick start!
 ## Quick Start
 
 `Java(version 11 or up)`, `Git`, `curl` and `Maven` installation must be preceded before installing and running this program.  
-To install and this program, run the commands below, or run the [`run.sh`](./run.sh) file that is included in the repository.  
+To install and this program, run the commands below, or run the [`run.sh`](./run.sh) file that is included in the repository.
 ```
 $ git clone https://github.com/csathenaryu/CSE364_Group10.git
 $ git pull origin main
@@ -71,7 +101,7 @@ $ mvn package
 $ java -jar target/CSE364-project-0.0.1-SNAPSHOT/
 ```
 
-Please refer to the following sections about details in [calling this API](#API-Guide).  
+Please refer to the following sections about details in [calling this API](#REST API).
 
 <br>
 <br>
@@ -81,40 +111,21 @@ Please refer to the following sections about details in [calling this API](#API-
 
 
 
-## Index
-
-+ [Introduction](#Introduction)
-+ [Index](#Index)
-+ [Installation](#Installation)
-+ [Webpage Guide](#Webpage-Guide)
-+ [API Guide](#API-Guide)
-    + [Common](#Common)
-    + [Input User Information](#Input-User-Information)
-    + [Input Movie Information](#Input-Movie-Information)
-+ [Recommendation Algorithm](#Recommendation-Algorithm)
-    + [Abstract](#Abstract)
-    + [Details](#Details)
-+ [Contributors](#Contributors)
-
-<br>
-<br>
-<br>
 
 
 
 
-
-## Web Service 
+## Web Service
 
 **For the Best User Experience**, we provide web service.  
-Welcome to user-friendly webpage of `VIM PROJECTOR`!  
+Welcome to user-friendly webpage of `VIM PROJECTOR`!
 
 <br>
 
 ### Home👋
 
 > Top 10 movies welcome you.  
-> For more service, click other tabs: `#Movie`, `#User`, `#Feeling Lucky`.  
+> For more service, click other tabs: `#Movie`, `#User`, `#Feeling Lucky`.
 >
 > <table><tr><th><img src="./pic/welcomePage.png"></th></tr></table>
 
@@ -124,8 +135,8 @@ Welcome to user-friendly webpage of `VIM PROJECTOR`!
 
 > Type **movie title** and limit.  
 > Then, click the title.  
-> `VIM PROJECTOR` recommends you highly rated movies based on given movie title.  
-> 
+> `VIM PROJECTOR` recommends you highly rated movies based on given movie title.
+>
 > <table><tr><th width="60%"><img src="./pic/searchByMoviePage.png"></th><th><img src="./pic/searchByMovieTitle.gif"></th></tr></table>
 
 <br>
@@ -134,8 +145,8 @@ Welcome to user-friendly webpage of `VIM PROJECTOR`!
 
 > Select **hashtag**.  
 > Then, click the search button.  
-> `VIM PROJECTOR` recommends you top 10 movies based on given user information.  
-> 
+> `VIM PROJECTOR` recommends you top 10 movies based on given user information.
+>
 > <table><tr><th width="60%"><img src="./pic/searchByUserPage.png"></th><th><img src="./pic/searchByUserInfo.gif"></th></tr></table>
 
 <br>
@@ -143,8 +154,8 @@ Welcome to user-friendly webpage of `VIM PROJECTOR`!
 ### Feeling Lucky🍀
 
 > Are you struggling with selecting movie?  
-> **Feeling Lucky** is the answer!  
-> 
+> **Feeling Lucky** is the answer!
+>
 > <table><tr><th><img src="./pic/feelingLucky.png"></th></tr></table>
 
 <br>
@@ -153,8 +164,8 @@ Welcome to user-friendly webpage of `VIM PROJECTOR`!
 
 > Travel recommended movies.  
 > For more information on recommended movie, **just click the poster!**  
-> It will take you `imdb` site.  
-> 
+> It will take you `imdb` site.
+>
 > <table><tr><th width="50%"><img src="./pic/scroll.gif"></th><th><img src="./pic/interactive.gif"></th></tr></table>  
 
 <br>
@@ -172,7 +183,7 @@ You can test it with `curl`.
 
 <br>
 
-### Recommendation by User Information  
+### Recommendation by User Information
 
 **API Basic Information**
 |Method|Request URL|Content Type|Output Format|
@@ -180,7 +191,7 @@ You can test it with `curl`.
 |GET|http://localhost:8080/users/recommendations|application/x-www-form-urlencoded|JSON|
 
 <br>
-  
+
 **Request Parameters**
 |Name|Required|Default Value|Description|
 |:---|:---|:---|:---|
@@ -207,7 +218,7 @@ curl -X GET "http://localhost:8080/users/recommendations?gender=m&age=24&occupat
 ```
 
 <br>
-  
+
 **Sample Response**
 ```
 [{
@@ -227,7 +238,7 @@ curl -X GET "http://localhost:8080/users/recommendations?gender=m&age=24&occupat
 
 <br>
 
-### Recommendation by Movie Information  
+### Recommendation by Movie Information
 
 **API Basic Information**
 |Method|Request URL|Content Type|Output Format|
@@ -260,7 +271,7 @@ curl -X GET "http://localhost:8080/movies/recommendations?title=Toy+Story+(1995)
 ```
 
 <br>
-  
+
 **Sample Response**
 ```
 [{
@@ -279,7 +290,7 @@ curl -X GET "http://localhost:8080/movies/recommendations?title=Toy+Story+(1995)
 ```
 <br>
 
-### Feeling Lucky  
+### Feeling Lucky
 
 **API Basic Information**
 |Method|Request URL|Content Type|Output Format|
@@ -318,7 +329,7 @@ curl -X GET http://localhost:8080/feelinglucky/recommendations
 ```
 <br>
 
-### Get All Movie Information  
+### Get All Movie Information
 
 **API Basic Information**
 |Method|Request URL|Content Type|Output Format|
@@ -362,7 +373,7 @@ curl -X GET http://localhost:8080/movies
 
 <br>
 
-### Get Movie Title List  
+### Get Movie Title List
 
 **API Basic Information**
 |Method|Request URL|Content Type|Output Format|
@@ -399,75 +410,75 @@ curl -X GET http://localhost:8080/movies/title
 ## Recommendation Algorithm
 
 ### Abstract
-The criteria for recommending movies in `VIM PROJECTOR` are `rating` and `count`.  
+The criteria for recommending movies in `VIM PROJECTOR` are `rating` and `count`.
 
-> `rating` is the average score of a movie that belongs to `genres` you input (`target genres`) and is rated by users belonging to your categories of `gender`, `age`, and `occupation` (`target users`).  
+> `rating` is the average score of a movie that belongs to `genres` you input (`target genres`) and is rated by users belonging to your categories of `gender`, `age`, and `occupation` (`target users`).
 
-> `count` is the number of ratings of a movie that belongs to the target genres and rated by the target users.  
+> `count` is the number of ratings of a movie that belongs to the target genres and rated by the target users.
 
-In our algorithms, movies with **high rating averages** will be selected as recommendations. In each step in the algorithms, rating data of the movies that fit the conditions (`target movies`) will be processed and sorted. Top N movies in the sorted list will be selected to be recommended, with N being the number of movies required.  
+In our algorithms, movies with **high rating averages** will be selected as recommendations. In each step in the algorithms, rating data of the movies that fit the conditions (`target movies`) will be processed and sorted. Top N movies in the sorted list will be selected to be recommended, with N being the number of movies required.
 
-For a movie to be recommended, the `rating average` of a movie must be **equal or above 3.5**, and the `count` of the movie must be **equal or above 1%** of the number of total rating data.  
+For a movie to be recommended, the `rating average` of a movie must be **equal or above 3.5**, and the `count` of the movie must be **equal or above 1%** of the number of total rating data.
 
 <br>
 
 ### Details
 
-`VIM PROJECTOR` uses two different movie recommendation algorithms depending on different inputs, **user information** and **movie information**.  
+`VIM PROJECTOR` uses two different movie recommendation algorithms depending on different inputs, **user information** and **movie information**.
 
-1. **Recommendation by user information**  
+1. **Recommendation by user information**
 
-    > By **user information**, we mean your `gender`, `age`, `occupation` and `genres` you wish to watch.
-    > When given **user information**, `VIM PROJECTOR` will recommend movies that are in the **target genres** and have high ratings by **target users**.  
-    > The steps in this algorithm are shown below.  
-    >
-    > 1.  Generate a list of 10 recommended movies that are in the `target genres` and are rated highly by `target users`. If `target genres` are not given, the algorithm will search for and recommend movies in all genres.  
-    > 2.  If the number of movies in the generated list is less than 10, then expand the range of `target users` by expanding the range of `occupation` to **all occupations** and search again. Then add the recommended movies to the list.      
-    > 3.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` again by expanding the range of `age` to **all age groups** and search again. Then add the recommended movies to the list.  
-    > 4.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` once more by expanding the range of `gender` to **all genders** and search again. Then add the recommended movies to the list.
-    
+   > By **user information**, we mean your `gender`, `age`, `occupation` and `genres` you wish to watch.
+   > When given **user information**, `VIM PROJECTOR` will recommend movies that are in the **target genres** and have high ratings by **target users**.  
+   > The steps in this algorithm are shown below.
+   >
+   > 1.  Generate a list of 10 recommended movies that are in the `target genres` and are rated highly by `target users`. If `target genres` are not given, the algorithm will search for and recommend movies in all genres.
+   > 2.  If the number of movies in the generated list is less than 10, then expand the range of `target users` by expanding the range of `occupation` to **all occupations** and search again. Then add the recommended movies to the list.
+   > 3.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` again by expanding the range of `age` to **all age groups** and search again. Then add the recommended movies to the list.
+   > 4.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` once more by expanding the range of `gender` to **all genders** and search again. Then add the recommended movies to the list.
+
     <details>
     <summary>Show an example</summary>
     <div markdown="1">
     <br>
-        
-    > Let’s see an example of {`gender`: "m", `age`: "56", `occupation`: "k-12student", `genres`: "" } given as an input of **user information**. Since the genres field is not given, movies in all genres will be the candidates for recommendation.
-    >
-    > According to this algorithm, the generation of a movie recommendation list would follow the process shown below.
-    >
-    > 1.  A list of recommended movies is generated using the given `target user` data and `target genres` data. In this example, there is only one `target user`. The number of movies contained in this list of recommended movies is less than 10.
-    > 2.  Since there are less than 10 movies in the list, expand the range of `target users` by allowing the search for **all occupations**. Now the conditions for the `target users` would be {`gender`: "m", `age`: "56", `occupation`: "", `genres`: "" }. Add the recommended movies based on the new range of `target users`.
-    > 3.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` by allowing the search for **all age groups**. Now the conditions for the `target users` would be {`gender`: "m", `age`: "", `occupation`: "", `genres`: "" }. Add the recommended movies based on the new range of `target users`.
-    > 4.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` by allowing the search for **all genders**. Now the conditions for the `target users` would be {`gender`: "", `age`: "", `occupation`: "", `genres`: "" }. Add the recommended movies based on the new range of `target users`.
+
+   > Let’s see an example of {`gender`: "m", `age`: "56", `occupation`: "k-12student", `genres`: "" } given as an input of **user information**. Since the genres field is not given, movies in all genres will be the candidates for recommendation.
+   >
+   > According to this algorithm, the generation of a movie recommendation list would follow the process shown below.
+   >
+   > 1.  A list of recommended movies is generated using the given `target user` data and `target genres` data. In this example, there is only one `target user`. The number of movies contained in this list of recommended movies is less than 10.
+   > 2.  Since there are less than 10 movies in the list, expand the range of `target users` by allowing the search for **all occupations**. Now the conditions for the `target users` would be {`gender`: "m", `age`: "56", `occupation`: "", `genres`: "" }. Add the recommended movies based on the new range of `target users`.
+   > 3.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` by allowing the search for **all age groups**. Now the conditions for the `target users` would be {`gender`: "m", `age`: "", `occupation`: "", `genres`: "" }. Add the recommended movies based on the new range of `target users`.
+   > 4.  If the number of movies in the generated list is still less than 10, then expand the range of `target users` by allowing the search for **all genders**. Now the conditions for the `target users` would be {`gender`: "", `age`: "", `occupation`: "", `genres`: "" }. Add the recommended movies based on the new range of `target users`.
     </div>
     </details>
-    
+
 <br>
-    
 
-2. **Recommendation by movie information**  
 
-    > By **movie information**, we mean a `movie title` and a `limit number`. When given **movie information**, `VIM PROJECTOR` will recommend high-rated movies similar to the given movie and up to the given `limit number`. The similarity of the movies are assessed by the `genres` of the movies.
-    > The steps in this algorithm are shown below.
-    > 
-    > 1.  Generate a list of recommended movies that are in the **same genres** as the given movie.
-    > 2.  If the number of movies in the generated list is less than the given `limit number`, add the recommended movies that belong to genres that **include all the genres** of the given movie to the list.
-    > 3.  If the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **at least one genre** of the given movie.
-    > 4.  If the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **all genres**.
-    
+2. **Recommendation by movie information**
+
+   > By **movie information**, we mean a `movie title` and a `limit number`. When given **movie information**, `VIM PROJECTOR` will recommend high-rated movies similar to the given movie and up to the given `limit number`. The similarity of the movies are assessed by the `genres` of the movies.
+   > The steps in this algorithm are shown below.
+   >
+   > 1.  Generate a list of recommended movies that are in the **same genres** as the given movie.
+   > 2.  If the number of movies in the generated list is less than the given `limit number`, add the recommended movies that belong to genres that **include all the genres** of the given movie to the list.
+   > 3.  If the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **at least one genre** of the given movie.
+   > 4.  If the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **all genres**.
+
     <details>
     <summary>Show an example</summary>
     <div markdown="1">
     <br>
-        
-    > Let’s see an example of {`title`: "Toy Story (1995)", `limit`: 20} given as an input of `movie information`. The `genres` of this movie are `Animation`, `Children's`, and `Comedy`. A list of 20 recommended movies should be generated.
-    > 
-    > According to this algorithm, the generation of a movie recommendation list would follow the process shown below.
-    > 
-    > 1.  A list of recommended movies is generated from the data of movies that only belong to all three `genres` of `Animation`, `Children's`, and `Comedy` at once. The generated list contains only one movie.
-    > 2.  Then recommendations are searched within the data of movies that belong to all three `genres` and more. One such example would be a movie that belongs to `genres` of `Animation`, `Children’s`, `Comedy` and `Action`. However, in this case there are no movies added to the list.
-    > 3.  Now the recommendations are searched from the data of movies that belong to at least one `genre` of the given three `genres`. This means that the recommended movies could belong to any one `genre` from `Animation`, `Children’s`, or `Comedy`, or to any two of these `genres`. In this example, there are 19 movies added to the generated list.
-    > 4.  In this example, the list of 20 recommended movies is now generated. However, if the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **all genres**.
+
+   > Let’s see an example of {`title`: "Toy Story (1995)", `limit`: 20} given as an input of `movie information`. The `genres` of this movie are `Animation`, `Children's`, and `Comedy`. A list of 20 recommended movies should be generated.
+   >
+   > According to this algorithm, the generation of a movie recommendation list would follow the process shown below.
+   >
+   > 1.  A list of recommended movies is generated from the data of movies that only belong to all three `genres` of `Animation`, `Children's`, and `Comedy` at once. The generated list contains only one movie.
+   > 2.  Then recommendations are searched within the data of movies that belong to all three `genres` and more. One such example would be a movie that belongs to `genres` of `Animation`, `Children’s`, `Comedy` and `Action`. However, in this case there are no movies added to the list.
+   > 3.  Now the recommendations are searched from the data of movies that belong to at least one `genre` of the given three `genres`. This means that the recommended movies could belong to any one `genre` from `Animation`, `Children’s`, or `Comedy`, or to any two of these `genres`. In this example, there are 19 movies added to the generated list.
+   > 4.  In this example, the list of 20 recommended movies is now generated. However, if the number of movies in the generated list is still less than the given `limit number`, add the recommended movies that belong to **all genres**.
 
     </div>
     </details>
