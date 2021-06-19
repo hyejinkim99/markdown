@@ -49,6 +49,29 @@ Also, it will give you random movie.
 Find your next movie to watch with `VIM PROJECTOR`!!!  
 
 If you want more information about our **recommendation algorithm**, please see [Recommendation Algorithm](***************).  
+Then, let's move on to quick start!  
+
+<br>
+<br>
+<br>
+
+
+
+
+
+## Quick Start
+
+`Java(version 11 or up)`, `Git`, `curl` and `Maven` installation must be preceded before installing and running this program.  
+To install and this program, run the commands below, or run the [`run.sh`](./run.sh) file that is included in the repository.  
+```
+$ git clone https://github.com/csathenaryu/CSE364_Group10.git
+$ git pull origin main
+$ git checkout main
+$ mvn package
+$ java -jar target/CSE364-project-0.0.1-SNAPSHOT/
+```
+
+Please refer to the following sections about details in [calling this API](#API-Guide).  
 
 <br>
 <br>
@@ -72,28 +95,6 @@ If you want more information about our **recommendation algorithm**, please see 
     + [Abstract](#Abstract)
     + [Details](#Details)
 + [Contributors](#Contributors)
-
-<br>
-<br>
-<br>
-
-
-
-
-
-## Installation
-
-`Java(version 11 or up)`, `Git`, `curl` and `Maven` installation must be preceded before installing and running this program.  
-To install and this program, run the commands below, or run the [`run.sh`](./run.sh) file that is included in the repository.  
-```
-$ git clone https://github.com/csathenaryu/CSE364_Group10.git
-$ git pull origin main
-$ git checkout main
-$ mvn package
-$ java -jar target/CSE364-project-0.0.1-SNAPSHOT/
-```
-
-Please refer to the following sections about details in [calling this API](#API-Guide).  
 
 <br>
 <br>
@@ -480,6 +481,9 @@ For a movie to be recommended, the `rating average` of a movie must be **equal o
 
 
 ## Contributors
+
+
+<table><tr><th width="60%"><img src="./pic/searchByMoviePage.png"></th><th><img src="./pic/searchByMovieTitle.gif"></th></tr></table>
 
 |NAME<br>(STUDENT ID)|ROLE|
 |:----|:--------|
