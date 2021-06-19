@@ -84,7 +84,7 @@ If you want more information about our **recommendation algorithm**, please see 
 > Then, click the title  
 > `VIM PROJECTOR` recommends you highly rated movies based on given movie title.  
 > 
-> <img src="./pic/searchByMovieTitle.png"> | <img src="./pic/searchByMovieTitle.gif">
+> <img src="./pic/searchByMoviePage.png"> | <img src="./pic/searchByMovieTitle.gif">
 > :---:|:---:
 > Page Overview | Type Movie Title (Auto-complete supported)
 
@@ -96,7 +96,7 @@ If you want more information about our **recommendation algorithm**, please see 
 > Then, click the search button  
 > `VIM PROJECTOR` recommends you top 10 movies based on given user information.  
 >
-> <img src="./pic/searchByUserInfo.png"> | <img src="./pic/searchByUserInfo.gif">
+> <img src="./pic/searchByUserInfo.png"> | <img src="./pic/searchByUserInfo.gif"> 
 > :---:|:---:
 > Page Overview | Select Hashtag
 
