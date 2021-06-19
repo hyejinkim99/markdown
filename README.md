@@ -1,7 +1,11 @@
 # VIM PROJECTOR (CSE364_Group10)
-<br>
 
 ## Introduction
+
+<p align="center"><img src="./pic/logo.png"></p>
+
+> ### ***Find Very Impressive Movies***
+
 `VIM PROJECTOR` is a **movie recommendation RESTful API** which recommends **Very Impressive Movies** according to given conditions.  
 There are two ways you can get movie recommendations using `VIM PROJECTOR`.  
 
