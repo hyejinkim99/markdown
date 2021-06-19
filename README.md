@@ -63,25 +63,64 @@ If you want more information about our **recommendation algorithm**, please see 
 
 
 
-## Webpage Guide
+## Webpage Guide 
 
-<img src="./pic/welcomePage.png">
-
-> ### ***Provide the Best User Experience***
-
-<br>
 
 ### Home👋
 
-### User😊
+> ***Provide the Best User Experience***  
+> ***Welcome to webpage of VIM PROJECTOR!***  
+> 
+> Top 10 movies welcome you!  
+> For more service, click other tabs: `#Movie`, `#User`, `#Feeling Lucky`  
+>
+> <img src="./pic/welcomePage.png">
 
-|:----:|:----:|
-| <img src="./pic/wideLogo.png"> | <img src="./pic/wideLogo.png"> |
+<br>
 
 ### Movie🎞️
 
+> Type **movie title** and limit  
+> Then, click the title  
+> `VIM PROJECTOR` recommends you highly rated movies based on given movie title.  
+> 
+> <img src="./pic/searchByMovieTitle.png"> | <img src="./pic/searchByMovieTitle.gif">
+> :---:|:---:
+> Page Overview | Type Movie Title (Auto-complete supported)
+
+<br>
+
+### User😊
+
+> Select **hashtag**  
+> Then, click the search button  
+> `VIM PROJECTOR` recommends you top 10 movies based on given user information.  
+>
+> <img src="./pic/searchByUserInfo.png"> | <img src="./pic/searchByUserInfo.gif">
+> :---:|:---:
+> Page Overview | Select Hashtag
+
+<br>
+
 ### Feeling Lucky🍀
-- 구현 후 작성
+
+> Are you struggling with selecting movie?  
+> **Feeling Lucky** is the answer!  
+> 
+> <img src="./pic/feelingLucky.png">
+> :---:
+> Page Overview
+
+<br>
+
+### Recommendation Page
+
+> For more information on recommended movie, **just click the poster!**  
+> It will take you `imdb` site  
+>
+> <img src="./pic/scroll.gif"> | <img src="./pic/interactive.gif">
+> :---:|:---:
+> Scroll | Resize
 
 
 
