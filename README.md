@@ -1,10 +1,16 @@
 # VIM PROJECTOR (CSE364_Group10)
 
+<br>
 <img src="./pic/wideLogo.png">
 
 > ### ***Find Very Impressive Movies, VIM PROJECTOR***
 
 <br>
+<br>
+
+
+
+
 
 ## Introduction
 
@@ -38,9 +44,12 @@ Find your next movie to watch with `VIM PROJECTOR`!!!
 
 If you want more information about our **recommendation algorithm**, please see [here](#Recommendation-Algorithm).  
 
+<br>
+<br>
+<br>
 
-<br>
-<br>
+
+
 
 
 ## Index
@@ -60,61 +69,7 @@ If you want more information about our **recommendation algorithm**, please see 
 
 <br>
 <br>
-
-
-
-## Webpage Guide 
-
-
-### Home👋
-
-> ***Provide the Best User Experience***  
-> ***Welcome to webpage of VIM PROJECTOR!***  
-> 
-> Top 10 movies welcome you!  
-> For more service, click other tabs: `#Movie`, `#User`, `#Feeling Lucky`  
->
-> <table><tr><th><img src="./pic/welcomePage.png"></th></tr></table>
-
 <br>
-
-### Movie🎞️
-
-> Type **movie title** and limit  
-> Then, click the title  
-> `VIM PROJECTOR` recommends you highly rated movies based on given movie title.  
-> 
-> <table><tr><th width="60%"><img src="./pic/searchByMoviePage.png"></th><th><img src="./pic/searchByMovieTitle.gif"></th></tr></table>
-
-<br>
-
-### User😊
-
-> Select **hashtag**  
-> Then, click the search button  
-> `VIM PROJECTOR` recommends you top 10 movies based on given user information.  
-> 
-> <table><tr><th width="60%"><img src="./pic/searchByUserPage.png"></th><th><img src="./pic/searchByUserInfo.gif"></th></tr></table>
-
-<br>
-
-### Feeling Lucky🍀
-
-> Are you struggling with selecting movie?  
-> **Feeling Lucky** is the answer!  
-> 
-> <table><tr><th><img src="./pic/feelingLucky.png"></th></tr></table>
-
-<br>
-
-### Recommendation Page
-
-> For more information on recommended movie, **just click the poster!**  
-> It will take you `imdb` site  
-> 
-> <table><tr><th width="50%"><img src="./pic/scroll.gif"></th><th><img src="./pic/interactive.gif"></th></tr></table>
-
-
 
 
 
@@ -132,37 +87,85 @@ $ mvn package
 $ java -jar target/CSE364-project-0.0.1-SNAPSHOT/
 ```
 
-Please refer to the following sections about details in [calling this API](#API-Guide).
+Please refer to the following sections about details in [calling this API](#API-Guide).  
+
+<br>
+<br>
+<br>
+
+
+
+
+
+## Web Service 
+
+**For the Best User Experience**, we provide web service.  
+Welcome to user-friendly webpage of `VIM PROJECTOR`!  
+
+<br>
+
+### Home👋
+
+> Top 10 movies welcome you.  
+> For more service, click other tabs: `#Movie`, `#User`, `#Feeling Lucky`.  
+>
+> <table><tr><th><img src="./pic/welcomePage.png"></th></tr></table>
+
+<br>
+
+### Movie🎞️
+
+> Type **movie title** and limit.  
+> Then, click the title.  
+> `VIM PROJECTOR` recommends you highly rated movies based on given movie title.  
+> 
+> <table><tr><th width="60%"><img src="./pic/searchByMoviePage.png"></th><th><img src="./pic/searchByMovieTitle.gif"></th></tr></table>
+
+<br>
+
+### User😊
+
+> Select **hashtag**.  
+> Then, click the search button.  
+> `VIM PROJECTOR` recommends you top 10 movies based on given user information.  
+> 
+> <table><tr><th width="60%"><img src="./pic/searchByUserPage.png"></th><th><img src="./pic/searchByUserInfo.gif"></th></tr></table>
+
+<br>
+
+### Feeling Lucky🍀
+
+> Are you struggling with selecting movie?  
+> **Feeling Lucky** is the answer!  
+> 
+> <table><tr><th><img src="./pic/feelingLucky.png"></th></tr></table>
+
+<br>
+
+### Recommendation Page👍
+
+> Travel recommended movies.  
+> For more information on recommended movie, **just click the poster!**  
+> It will take you `imdb` site.  
+> 
+> <table><tr><th width="50%"><img src="./pic/scroll.gif"></th><th><img src="./pic/interactive.gif"></th></tr></table>  
+
 <br>
 <br>
 <br>
 
 
-## Using the REST API
-This document shows you how to perform movie recommendations
-You can test it with `curl`  
 
 
 
+## REST API
 
-### Calling the API
-
-<br>
-
-**[Request]**
-- Input of GET request should be in **JSON** type.  
-- Please refer to `list of available input`. The input which is not in the list might be ignored or miscategorized.  
-- **Capitalization** does not matter. However, in the case of `movie title`, capitalization does matter.  
-- Please **avoid spelling mistakes.** This program does not provide any fool-proof feature for such mistakes.  
+`VIM PROJECTOR` provide **RESTful API** service.  
+You can test it with `curl`.
 
 <br>
 
-
-
-
-
-
-### Recommendation based on User Information
+### Recommendation by User Information  
 
 **API Basic Information**
 |Method|Request URL|Content Type|Output Format|
@@ -191,38 +194,32 @@ You can test it with `curl`
 
 <br>
 
-
 **Sample Request**
 ```
-curl -X GET http://localhost:8080/users/recommendations?gender=m&age=24&occupation=gradstudent&genres=action|adventure
+curl -X GET "http://localhost:8080/users/recommendations?gender=m&age=24&occupation=gradstudent&genres=action|adventure"
 ```
+
 <br>
   
 **Sample Response**
 ```
 [{
-    "title": "xxx",
-    "genres": "xxx",
-    "imdb": "(https://www.imdb.com/title/ttXXXXXXX)"
-    "poster_url": https://xxx/xxx.jpg
-
-},
-{
-    "title": "xxx",
-    "genres": "xxx",
-    "imdb": "(https://www.imdb.com/title/ttXXXXXXX)"
-    "poster_url": https://xxx/xxx.jpg
+    "title" : "Sanjuro (1962)",
+    "genres" : "Action|Adventure",
+    "imdb" : "(http://www.imdb.com/title/tt0056443)",
+    "poster_url" : "https://m.media-amazon.com/images/M/MV5BZmY3MDlmODctYTY3Yi00NzYyLWIxNTUtYjVlZWZjMmMwZTBkXkEyXkFqcGdeQXVyMzAxNjg3MjQ@..jpg"
+}, {
+    "title" : "Man Who Would Be King, The (1975)",
+    "genres" : "Adventure",
+    "imdb" : "(http://www.imdb.com/title/tt0073341)",
+    "poster_url" : "https://m.media-amazon.com/images/M/MV5BZWQzYjBjZmQtZDFiOS00ZDQ1LWI4MDAtMDk1NGE1NDBhYjNhL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@..jpg"
 },
 ...]
 ```
+
 <br>
-<br>
-<br>
 
-
-
-
-### Recommendation based on Movie Information
+### Recommendation by Movie Title  
 
 **API Basic Information**
 |Method|Request URL|Content Type|Output Format|
@@ -230,7 +227,6 @@ curl -X GET http://localhost:8080/users/recommendations?gender=m&age=24&occupati
 |GET|http://localhost:8080/movies/recommendations|application/x-www-form-urlencoded|JSON|
 
 <br>
-
 
 **Request Parameters**
 |Name|Required|Default Value|Description|
@@ -250,39 +246,32 @@ curl -X GET http://localhost:8080/users/recommendations?gender=m&age=24&occupati
 
 <br>
 
-
 **Sample Request**
 ```
-curl -X GET http://localhost:8080/users/recommendations?title=Sanjuro+(1972)&limit=20
+curl -X GET "http://localhost:8080/movies/recommendations?title=Toy+Story+(1995)&limit=20"
 ```
+
 <br>
   
 **Sample Response**
 ```
 [{
-    "title": "xxx",
-    "genres": "xxx",
-    "imdb": "(https://www.imdb.com/title/ttXXXXXXX)"
-    "poster_url": https://xxx/xxx.jpg
-
+    "title" : "Toy Story 2 (1999)",
+    "genres" : "Animation|Children's|Comedy",
+    "imdb" : "(http://www.imdb.com/title/tt0120363)",
+    "poster_url" : "https://m.media-amazon.com/images/M/MV5BMWM5ZDcxMTYtNTEyNS00MDRkLWI3YTItNThmMGExMWY4NDIwXkEyXkFqcGdeQXVyNjUwNzk3NDc@..jpg"
 },
 {
-    "title": "xxx",
-    "genres": "xxx",
-    "imdb": "(https://www.imdb.com/title/ttXXXXXXX)"
-    "poster_url": https://xxx/xxx.jpg
+    "title" : "Chicken Run (2000)",
+    "genres" : "Animation|Children's|Comedy",
+    "imdb" : "(http://www.imdb.com/title/tt0120630)",
+    "poster_url" : "https://m.media-amazon.com/images/M/MV5BY2UyYjFkNzAtYzIyMC00MGI1LTlkNDktNzUyOGQ5NTI2ZGFjXkEyXkFqcGdeQXVyNTUyMzE4Mzg@..jpg"
 },
 ...]
 ```
 <br>
-<br>
-<br>
 
-
-
-
-
-### Feeling Lucky
+### Feeling Lucky  
 
 **API Basic Information**
 |Method|Request URL|Content Type|Output Format|
@@ -313,27 +302,15 @@ curl -X GET http://localhost:8080/feelinglucky/recommendations
 **Sample Response**
 ```
 [{
-    "title": "xxx",
-    "genres": "xxx",
-    "imdb": "(https://www.imdb.com/title/ttXXXXXXX)"
-    "poster_url": https://xxx/xxx.jpg
-
-},
-{
-    "title": "xxx",
-    "genres": "xxx",
-    "imdb": "(https://www.imdb.com/title/ttXXXXXXX)"
-    "poster_url": https://xxx/xxx.jpg
-},
-...]
+    "title" : "Crumb (1994)",
+    "genres" : "Documentary",
+    "imdb" : "(http://www.imdb.com/title/tt0109508)",
+    "poster_url" : "https://m.media-amazon.com/images/M/MV5BYTViMDM5YjktMDhjNy00MjZjLTg2ODctOGI3MzkzYWNiODA0XkEyXkFqcGdeQXVyNTAyODkwOQ@@..jpg"
+}]
 ```
 <br>
-<br>
-<br>
 
-
-
-### Get All Movie Information
+### Get All Movie Information  
 
 **API Basic Information**
 |Method|Request URL|Content Type|Output Format|
@@ -346,10 +323,9 @@ curl -X GET http://localhost:8080/feelinglucky/recommendations
 **Response Body**
 |Key|Type|Description|
 |:---|:---|:---|
+|movieId|int|Id of recommended movies|
 |title|string|Titles of recommended movies|
 |genres|string|Genres of recommended movies|
-|imdb|string|Link of receommended movies|
-|poster_url|string|Link of poster of receommended movies|
 
 <br>
 
@@ -364,53 +340,49 @@ curl -X GET http://localhost:8080/movies
 **Sample Response**
 ```
 [{
-    "title": "xxx",
-    "genres": "xxx",
-    "imdb": "(https://www.imdb.com/title/ttXXXXXXX)"
-    "poster_url": https://xxx/xxx.jpg
-
+    "movieId" : 1,
+    "title" : "Toy Story (1995)",
+    "genres" : "Animation|Children's|Comedy"
 },
 {
-    "title": "xxx",
-    "genres": "xxx",
-    "imdb": "(https://www.imdb.com/title/ttXXXXXXX)"
-    "poster_url": https://xxx/xxx.jpg
+    "movieId" : 2,
+    "title" : "Jumanji (1995)",
+    "genres" : "Adventure|Children's|Fantasy"
 },
 ...]
 ```
+
 <br>
-<br>
 
-
-
-
-
-### Get Movie Title List
+### Get Movie Title List  
 
 **API Basic Information**
 |Method|Request URL|Content Type|Output Format|
 |:---|:---|:---|:---|
-|GET|http://localhost:8080/movies/title|application/x-www-form-urlencoded|string|
+|GET|http://localhost:8080/movies/title|application/x-www-form-urlencoded|JSON|
 
 <br>
 
+**Response**  
+List of strings
+
+<br>
 
 **Sample Request**
 ```
 curl -X GET http://localhost:8080/movies/title
 ```
-<br>
 
+<br>
 
 **Sample Response**
 ```
-["Movie Title (xxxx)", "Movie Title 2 (xxxx)", ...]
+[ "Toy Story (1995)", "Jumanji (1995)", ...]
 ```
+
 <br>
 <br>
-
-
-
+<br>
 
 
 
@@ -427,8 +399,8 @@ The criteria for recommending movies in `VIM PROJECTOR` are `rating` and `count`
 In our algorithms, movies with **high rating averages** will be selected as recommendations. In each step in the algorithms, rating data of the movies that fit the conditions (`target movies`) will be processed and sorted. Top N movies in the sorted list will be selected to be recommended, with N being the number of movies required.  
 
 For a movie to be recommended, the `rating average` of a movie must be **equal or above 3.5**, and the `count` of the movie must be **equal or above 1%** of the number of total rating data.  
-<br>
 
+<br>
 
 ### Details
 
@@ -491,6 +463,11 @@ For a movie to be recommended, the `rating average` of a movie must be **equal o
     
 <br>
 <br>
+<br>
+
+
+
+
 
 ## Contributors
 
